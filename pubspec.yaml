@@ -27,6 +27,7 @@ dependencies:
   bloc: ^7.1.0
   flutter_bloc: ^7.2.0
   conditional_builder: ^1.0.2
+  smooth_page_indicator: ^0.2.3
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -47,6 +48,12 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  assets:
+    - assets/images/
+  fonts:
+    - family: Aovel
+      fonts:
+        - asset: assets/fonts/Aovel.ttf
 
   # To add assets to your application, add an assets section, like this:
   # assets:
@@ -64,12 +71,12 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
+#   fonts:
+#     - family: Schyler
+#       fonts:
+#         - asset: fonts/Schyler-Regular.ttf
+#         - asset: fonts/Schyler-Italic.ttf
+#           style: italic
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

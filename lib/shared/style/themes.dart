@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hexcolor/hexcolor.dart';
 
+import 'colors.dart';
+
 ThemeData  lightTheme = ThemeData(
-  primarySwatch: Colors.deepOrange,
+  primarySwatch: defaultColor,
   scaffoldBackgroundColor: Colors.white,
   appBarTheme: AppBarTheme(
     backwardsCompatibility:false ,
@@ -26,7 +28,7 @@ ThemeData  lightTheme = ThemeData(
 
   ),
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
-    selectedItemColor: Colors.deepOrange,
+    selectedItemColor: defaultColor,
     unselectedItemColor: Colors.grey,
     elevation:20.0,
     backgroundColor: Colors.white,
@@ -38,6 +40,7 @@ ThemeData  lightTheme = ThemeData(
         fontSize: 18.0
     ),
   ),
+  fontFamily: 'Aovel',
 );
 
 ThemeData darkTheme =  ThemeData(
@@ -58,6 +61,9 @@ ThemeData darkTheme =  ThemeData(
     actionsIconTheme: IconThemeData(
       color: Colors.white,
     ),
+    iconTheme: IconThemeData(
+      color: Colors.white,
+    ),
   ),
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
     selectedItemColor: Colors.deepOrange,
@@ -72,4 +78,5 @@ ThemeData darkTheme =  ThemeData(
         fontSize: 18.0
     ),
   ),
+  fontFamily: 'Aovel',
 );

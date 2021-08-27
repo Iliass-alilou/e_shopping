@@ -1,0 +1,5 @@
+
+1-page view builder 
+2-controller to control widget  (PageController)
+3-smooth-page-indicator
+4- push and Replacement (finish Route) 
