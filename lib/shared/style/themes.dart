@@ -27,12 +27,12 @@ ThemeData  lightTheme = ThemeData(
     ),
 
   ),
-  bottomNavigationBarTheme: BottomNavigationBarThemeData(
-    selectedItemColor: defaultColor,
-    unselectedItemColor: Colors.grey,
-    elevation:20.0,
-    backgroundColor: Colors.white,
-  ),
+  // bottomNavigationBarTheme: BottomNavigationBarThemeData(
+  //   selectedItemColor: defaultColor,
+  //   unselectedItemColor: Colors.grey,
+  //   elevation:20.0,
+  //   backgroundColor: Colors.white,
+  // ),
   textTheme: TextTheme(
     bodyText1: TextStyle(
         fontWeight: FontWeight.w600,
@@ -40,11 +40,11 @@ ThemeData  lightTheme = ThemeData(
         fontSize: 18.0
     ),
   ),
-  fontFamily: 'Aovel',
+  fontFamily: 'Roboto',
 );
 
 ThemeData darkTheme =  ThemeData(
-  primarySwatch: Colors.deepOrange,
+  primarySwatch: defaultColor,
   scaffoldBackgroundColor: HexColor('333739'),
   appBarTheme: AppBarTheme(
     backwardsCompatibility:false ,
@@ -65,12 +65,12 @@ ThemeData darkTheme =  ThemeData(
       color: Colors.white,
     ),
   ),
-  bottomNavigationBarTheme: BottomNavigationBarThemeData(
-    selectedItemColor: Colors.deepOrange,
-    unselectedItemColor: Colors.grey,
-    elevation:20.0,
-    backgroundColor: HexColor('333739'),
-  ),
+  // bottomNavigationBarTheme: BottomNavigationBarThemeData(
+  //   selectedItemColor: Colors.deepOrange,
+  //   unselectedItemColor: Colors.grey,
+  //   elevation:20.0,
+  //   backgroundColor: HexColor('333739'),
+  // ),
   textTheme: TextTheme(
     bodyText1: TextStyle(
         fontWeight: FontWeight.w600,
@@ -78,5 +78,5 @@ ThemeData darkTheme =  ThemeData(
         fontSize: 18.0
     ),
   ),
-  fontFamily: 'Aovel',
+  fontFamily: 'Roboto',
 );

@@ -46,17 +46,11 @@ class _On_BoardingState extends State<On_Boarding> {
             padding: const EdgeInsets.only(
               right: 20.0
             ),
-            child: TextButton(
+            child: textButton(
+                text: 'Skip',
                 onPressed: (){
-                  Navigate_and_Finish( context , Login_Screen() );
-                },
-                child: Text(
-                  'Skip',
-                  style: TextStyle(
-                    fontSize: 20.0
-                  ),
-                ),
-            ),
+                  Navigate_and_Finish(context, Login_Screen());
+                }),
           ),
         ],
       ),

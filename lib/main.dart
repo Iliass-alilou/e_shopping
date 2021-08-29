@@ -1,3 +1,6 @@
+import 'package:bloc/bloc.dart';
+import 'package:e_shopping/shared/bloc_Observer.dart';
+import 'package:e_shopping/shared/network/remote/dio_helper.dart';
 import 'package:e_shopping/shared/style/themes.dart';
 import 'package:flutter/material.dart';
 import 'modules/on_boarding.dart';
@@ -5,6 +8,8 @@ import 'modules/on_boarding.dart';
 
 
 void main() {
+  Bloc.observer = MyBlocObserver();
+  DioHelper.init();
   runApp(MyApp());
 }
 
