@@ -1,3 +1,4 @@
+import 'package:e_shopping/shared/cubits/login/cubit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -20,14 +21,17 @@ void Navigate_and_Finish( context, Widget,) => Navigator.pushAndRemoveUntil(
 
 //  for text form field
 Widget default_textFormField ({
+  context,
   required TextInputType textInputType,
   required TextEditingController controller,
   required String labelText,
   required IconData icon,
-  IconData? suffixIcon,
+  IconData? SuffixIcon,
   FormFieldValidator<String>? validator,
   GestureTapCallback? onTap,
   bool obscureText = false,
+  VoidCallback? onPressed_suffix,
+
 })  => TextFormField(
   keyboardType: textInputType,
   controller: controller,
@@ -39,9 +43,14 @@ Widget default_textFormField ({
     prefixIcon: Icon(
       icon,
     ),
-    suffixIcon: Icon(
-        suffixIcon,
-    ),
+    suffixIcon: IconButton(
+        onPressed: (){
+          Loging_Cubit.get(context).change_password_visiblity();
+        },
+        icon: Icon(
+          SuffixIcon,
+        ),
+    )
   ),
   validator: validator ,
   onTap: onTap,

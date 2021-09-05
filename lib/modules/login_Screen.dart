@@ -6,6 +6,7 @@ import 'package:e_shopping/shared/cubits/login/states.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 
 class Login_Screen extends StatelessWidget {
@@ -18,7 +19,38 @@ class Login_Screen extends StatelessWidget {
     return BlocProvider(
       create: (context)=> Loging_Cubit(),
       child: BlocConsumer<Loging_Cubit,Login_States>(
-        listener: (context,state){},
+        listener: (context,state)
+        {
+          if (state is Success_Login_state)
+            {
+              if (state.loginModel!.status)
+                {
+                  print(state.loginModel!.message);
+                  print(state.loginModel!.data!.token);
+                  Fluttertoast.showToast(
+                      msg: state.loginModel!.message,
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.TOP,
+                      timeInSecForIosWeb: 5,
+                      backgroundColor: Colors.green,
+                      textColor: Colors.white,
+                      fontSize: 16.0
+                  );
+                }
+              else{
+                print(state.loginModel!.message);
+                Fluttertoast.showToast(
+                    msg: state.loginModel!.message,
+                    toastLength: Toast.LENGTH_SHORT,
+                    gravity: ToastGravity.BOTTOM,
+                    timeInSecForIosWeb: 5,
+                    backgroundColor: Colors.red,
+                    textColor: Colors.white,
+                    fontSize: 16.0
+                );
+              }
+            }
+        },
         builder: (context,state){
           var login_cubit = Loging_Cubit.get(context);
           return Scaffold(
@@ -49,6 +81,7 @@ class Login_Screen extends StatelessWidget {
                         ),
 
                         default_textFormField(
+                          context: context,//this context only for changing state on passvisibility
                           textInputType: TextInputType.emailAddress,
                           controller: emailController,
                           labelText: 'Email',
@@ -65,18 +98,20 @@ class Login_Screen extends StatelessWidget {
                         ),
 
                         default_textFormField(
+                          context: context,
                           textInputType: TextInputType.visiblePassword,
-                          obscureText: true,
                           controller: passwordController,
                           labelText: 'Password',
                           icon: Icons.lock,
-                          suffixIcon: Icons.visibility,
+                          SuffixIcon: login_cubit.suffix_pass_icon,
                           validator:(value){
                             if(value == null || value.isEmpty)
                             {
                               return ('password is too Short');
                             }
-                          } ,
+                          },
+                          obscureText: login_cubit.isPassword,
+
                         ),
                         SizedBox(
                           height: 20.0,
